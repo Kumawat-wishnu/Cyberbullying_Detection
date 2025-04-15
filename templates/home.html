@@ -1,87 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Home</title>
-    <!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-    <!-- Import Google Icon Font -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Import materialize.css -->
-    <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css" media="screen,projection"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyberbullying Detection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/home.css') }}">
 </head>
-<style>
-    body {
-        background-color: #F1F1F1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        text-align: center;
-    }
-    .container {
-        width: 80%;
-        max-width: 800px;
-    }
-    h2 {
-        margin-bottom: 20px;
-    }
-    img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 20px;
-    }
-    .ml-container {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .btn-info {
-        background-color: #5C6589;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 16px;
-        margin: 10px;
-        cursor: pointer;
-    }
-    textarea {
-        margin: 10px 0;
-        height: 200px;
-        width: 80%;
-        padding: 12px 20px;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-        background-color: #f8f8f8;
-        resize: none;
-        max-width: 100%;
-    }
-    h3 {
-        margin-top: 20px;
-    }
-</style>
+
 <body>
-
-    <div class="container">
-        <h2>Text Analysis For Cyber-Bullying</h2>
-        <img src="https://i.ytimg.com/vi/dMdKmHjpgFk/sddefault.jpg" alt="Cyber-Bullying">
-        <div class="ml-container">
-            <form action="{{ url_for('predict') }}" method="POST">
-              <h2>Text Analysis For Cyber-Bullying</h2>
-
-                <p><b>Enter Your Text Here</b></p>
-                <textarea name="message" rows="4" cols="50" placeholder="Type your message here..."></textarea>
-                <br/>
-                <input type="submit" class="btn-info" value="Predict">
-            </form>
-        </div>
+  <div class="container">
+    <h1>Cyberbullying Detection</h1>
+    <form action="/predict" method="POST" class="input-area">
+        <input type="text" name="message" placeholder="Enter a tweet" required>
+        <button type="submit">Detect</button>
+      </form>
+    <div class="illustration">
+      <img src="../static/images/bg image.png" alt="Cyberbullying Illustration">
     </div>
-
+  </div>
 </body>
+
 </html>

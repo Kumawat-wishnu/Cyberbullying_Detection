@@ -1,13 +1,51 @@
 <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detection Result</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/result.css') }}">
+</head>
+
+<body>
+  <div class="result-box">
+    <h1>🚀 Prediction Result</h1>
+
+    {% if prediction ==1 %}
+    <div class="emoji">😠</div>
+    <div class="user-input">"{{ user_input }}"</div>
+    <div class="prediction bullying">
+	Cyberbullying detected. Let’s be kind!
+    </div>
+    {% elif prediction ==0 %}
+    <div class="emoji">😊</div>
+    <div class="confetti">🎉🎉🎉</div>
+    <div class="user-input">"{{ user_input }}"</div>
+    <div class="prediction non-bullying">
+	 All clear! No bullying found. 
+    </div>
+    {% endif %}
+
+    <a href="/" class="back-button">🔁 Analyze Another</a>
+  </div>
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-    <!--Import Google Icon Font-->
+   
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
+  
     <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css" media="screen,projection"/>
-	<!--Let browser know website is optimized for mobile-->
+	
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <style>
@@ -50,4 +88,4 @@ body{
 	</div>
 
 </body>
-</html>
+</html> -->

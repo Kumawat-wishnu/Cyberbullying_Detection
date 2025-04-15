@@ -1,0 +1,116 @@
+body {
+    /* background: url('{{ url_for('static', filename='images/background.jpg') }}') no-repeat center center fixed; */
+    background: linear-gradient(to right, #0d47a1, #1976d2);
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: white;
+    overflow: hidden;
+  }
+
+  .result-box {
+    background: rgba(13, 71, 161, 0.95);
+    padding: 3rem 2rem;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    max-width: 700px;
+    width: 90%;
+    animation: slideIn 0.8s ease-in-out;
+    backdrop-filter: blur(8px);
+    position: relative;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes confettiFade {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .emoji {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: bounce 1s infinite alternate;
+  }
+
+  @keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+  }
+
+  .prediction {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 1.8rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .bullying {
+    background: linear-gradient(135deg, #ff1744, #b71c1c);
+    box-shadow: 0 6px 20px rgba(255, 23, 68, 0.5);
+  }
+
+  .non-bullying {
+    background: linear-gradient(135deg, #00c853, #2e7d32);
+    box-shadow: 0 6px 20px rgba(0, 200, 83, 0.4);
+  }
+
+  .user-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+  .back-button {
+    padding: 0.9rem 2rem;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .back-button:hover {
+    background-color: #1565c0;
+    transform: scale(1.05);
+  }
+
+  .confetti {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    animation: confettiFade 1s ease-out;
+  }

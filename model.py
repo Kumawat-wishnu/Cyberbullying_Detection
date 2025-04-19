@@ -17,7 +17,7 @@ X = df['message']
 y = df['label']
 
 # Extract features using CountVectorizer
-cv = CountVectorizer()
+cv = CountVectorizer(stop_words='english')
 X = cv.fit_transform(X)  # Fit the data to the vectorizer
 
 # Split the dataset into training and testing sets
